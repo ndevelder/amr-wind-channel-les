@@ -1,0 +1,24 @@
+target_sources(${amr_wind_lib_name}
+  PRIVATE
+
+  BoussinesqBubble.cpp
+  BoussinesqBubbleFieldInit.cpp
+  ChannelFlow.cpp
+  ChannelFlowLES.cpp
+  ChannelStats.cpp
+  RayleighTaylor.cpp
+  RayleighTaylorFieldInit.cpp
+  TaylorGreenVortex.cpp
+  FreeStream.cpp
+  ConvectingTaylorVortex.cpp
+  EkmanSpiral.cpp
+  SyntheticTurbulence.cpp
+  HybridRANSLESABL.cpp
+  )
+
+add_subdirectory(multiphase)
+add_subdirectory(udfs)
+
+if(AMR_WIND_ENABLE_MASA)
+  add_subdirectory(mms)
+endif()
